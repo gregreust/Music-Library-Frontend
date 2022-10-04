@@ -1,15 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import SongList from './Components/SongList'; 
+
 
 function App() {
   return (
-    <body>
+    <div>
       <nav>
         <h1>Music Library</h1>
       </nav>
-      <SongList/>
-    </body>
-
+      {/* <Search/> */}
+      <SongList/> 
+      {/* <AddSong/> */}
+    </div>
   );
 }
 
