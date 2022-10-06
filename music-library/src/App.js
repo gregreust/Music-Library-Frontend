@@ -1,5 +1,6 @@
 import React from 'react';
 import SongList from './Components/SongList'; 
+import Search from './Components/Search';
 
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
       <nav>
         <h1>Music Library</h1>
       </nav>
-      {/* <Search/> */}
+      <Search/>  
       <SongList/> 
       {/* <AddSong/> */}
     </div>
