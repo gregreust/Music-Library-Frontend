@@ -4,12 +4,21 @@ import SongRow from './SongRow';
 
 let GET_ALL_SONGS_URL = 'http://127.0.0.1:8000/music/';
 
-const SongList = () => {
+const SongList = ({sortBy}) => {
 
     const [songs, setSongs] = useState(["Loading"]);
 
     useEffect(() => {
-        getAllSongs();
+        if(sortBy === ""){
+            getAllSongs();
+        } else {
+            console.log(sortBy);
+            //NEED CODE TO SORT ARRAY ALBHABETICALLY AND NUMERICALLY BY SORTBY PARAM
+            let newSongList = songs.sort((a, b) => a.sortBy.localeCompare(b.sortBy))
+                console.log(newSongList);
+            setSongs(newSongList);
+        }
+        
     });
 
     async function getAllSongs(){

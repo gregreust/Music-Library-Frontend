@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 // import axios from 'axios';
 
-const Search = () => {
+const Search = ({reSortSongs}) => {
     
 //    const [searchFor, setSearchFor] = useState('');
    const [sortBy, setSortBy] = useState('');
@@ -12,9 +12,8 @@ const Search = () => {
 
     function handleSubmit(event){
         event.preventDefault();
-        console.log(sortBy);
         //pass sortBy to SongList to re-order displayed songs
-        
+        reSortSongs(sortBy);
     }
 
     return ( 
