@@ -20,7 +20,7 @@ const SongList = () => {
 
     return ( 
         <ul>
-            {songs.map(song => <li> <SongRow song = {song} getAllSongs = {getAllSongs}/> </li>)}       {/* put SongRow in here later */}
+            {songs.map(song => <li> <SongRow song = {song} getAllSongs = {getAllSongs}/> </li>)}       
         </ul>
      );
 }
