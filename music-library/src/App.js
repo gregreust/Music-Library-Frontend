@@ -5,7 +5,12 @@ import Search from './Components/Search';
 
 function App() {
 
+  const [searchFor, setSearchFor] = useState("");
   const [sortBy, setSortBy] = useState("");
+
+  function searchingSongs(searchFor){
+    setSearchFor(searchFor);
+  }
 
   function reSortSongs(sortBy){
     setSortBy(sortBy); 
@@ -16,9 +21,9 @@ function App() {
       <nav>
         <h1>Music Library</h1>
       </nav>
-      <Search reSortSongs={reSortSongs}/>  
-      <SongList sortBy={sortBy}/> 
-      {/* <AddSong/> */}
+      <Search searchingSongs={searchingSongs} reSortSongs={reSortSongs}/>  
+      <SongList searchFor={searchFor} sortBy={sortBy}/> 
+      <AddSong/>
     </div>
   );
 }
