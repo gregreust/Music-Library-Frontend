@@ -12,6 +12,13 @@ export const EditModal = ({setShowModal}, {song}) => {
       setShowModal(false);
     }
   };
+
+  const deleteSong = async(song) => {
+    await axios.delete(`http://127.0.0.1:8000/music/${song.id}/`);
+  }
+
+  
+
   //render the modal JSX in the portal div.
   return (
     <div className="container" ref={modalRef} onClick={closeModal}>
@@ -20,7 +27,7 @@ export const EditModal = ({setShowModal}, {song}) => {
         <button onClick={() => setShowModal(false)}>X</button>
         {/* using AddSong, but with edit mode */}
         <AddSong editMode="editMode" song={song} />
-        <button>Delete Song from Library</button>
+        <button onClick={deleteSong}>Delete Song from Library</button>
       </div>
     </div>
   );
