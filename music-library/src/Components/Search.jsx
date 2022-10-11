@@ -3,13 +3,15 @@ import React, {useState} from 'react';
 
 const Search = ({searchingSongs}, {reSortSongs}) => {
     
-    const [searchFor, setSearchFor] = useState('');
-    const [sortBy, setSortBy] = useState("Artist");
+    const [searchFor, setSearchFor] = useState("");
+    const [sortBy, setSortBy] = useState("");
 
 
     function handleSubmit(event){
         event.preventDefault();
         //pass sortBy to SongList to re-order displayed songs
+        console.log(searchFor);
+        console.log(sortBy);
         searchingSongs(searchFor);
         reSortSongs(sortBy);
     }

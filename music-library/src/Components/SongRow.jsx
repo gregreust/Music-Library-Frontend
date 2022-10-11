@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
+import { EditModal } from './EditModal';
 
 const SongRow = ({song, getAllSongs}) => {
 
@@ -7,6 +8,13 @@ const SongRow = ({song, getAllSongs}) => {
         let newSong = {...song, likes:song.likes+1};
         await axios.put(`http://127.0.0.1:8000/music/${song.id}/`, newSong).then(()=>{getAllSongs()});
     }
+
+    const [showModal, setShowModal] = useState(false);
+    
+
+    const openEditModal = () => {
+        setShowModal(true);
+      };
 
     return ( 
         <div className="row">
@@ -17,7 +25,8 @@ const SongRow = ({song, getAllSongs}) => {
             <div>{song.genre}</div>
             <div>{song.likes}</div>
             <button onClick={handleLike}>Like</button>
-            <button>Edit</button>
+            <button onClick={openEditModal}>Edit</button>
+            {showModal ? <EditModal setShowModal={setShowModal} song={song}/> : null}
         </div>
      );
 }

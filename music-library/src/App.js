@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import SongList from './Components/SongList'; 
 import Search from './Components/Search';
+import AddSong from './Components/AddSong';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       </nav>
       <Search searchingSongs={searchingSongs} reSortSongs={reSortSongs}/>  
       <SongList searchFor={searchFor} sortBy={sortBy}/> 
+      <h3>Add New Song</h3>
       <AddSong/>
     </div>
   );
