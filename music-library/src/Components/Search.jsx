@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 // import axios from 'axios';
 
-const Search = ({searchingSongs}, {reSortSongs}) => {
+const Search = ({searchingSongs, reSortSongs}) => {
     
     const [searchFor, setSearchFor] = useState("");
     const [sortBy, setSortBy] = useState("");

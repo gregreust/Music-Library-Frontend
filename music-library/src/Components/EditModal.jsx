@@ -4,7 +4,7 @@ import AddSong from './AddSong';
 
 
 
-export const EditModal = ({setShowModal}, {song}) => {
+export const EditModal = ({setShowModal, song}) => {
   // close the modal when clicking outside the modal.
   const modalRef = useRef();
   const closeModal = (e) => {
@@ -13,8 +13,13 @@ export const EditModal = ({setShowModal}, {song}) => {
     }
   };
 
-  const deleteSong = async(song) => {
-    await axios.delete(`http://127.0.0.1:8000/music/${song.id}/`);
+  const deleteSong = async () => {
+    try {
+        await axios.delete(`http://127.0.0.1:8000/music/${song.id}/`).then(window.location.reload());
+    } catch (error){
+        console.log(error);
+    }
+    
   }
 
   
@@ -26,7 +31,7 @@ export const EditModal = ({setShowModal}, {song}) => {
         <h3>Edit</h3>
         <button onClick={() => setShowModal(false)}>X</button>
         {/* using AddSong, but with edit mode */}
-        <AddSong editMode="editMode" song={song} />
+        <AddSong editMode={true} song={song}/>
         <button onClick={deleteSong}>Delete Song from Library</button>
       </div>
     </div>

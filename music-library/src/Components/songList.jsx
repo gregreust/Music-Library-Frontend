@@ -51,8 +51,7 @@ const SongList = ({sortBy}) => {
             let newSongList = songs.sort(((a, b) => (a.title > b.title) ? 1 : -1));
             console.log(newSongList);
             setSongs(newSongList);
-        } else {
-        }
+        } 
         return songs;
     }
     return ( 

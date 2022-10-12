@@ -26,7 +26,7 @@ const SongRow = ({song, getAllSongs}) => {
             <div>{song.likes}</div>
             <button onClick={handleLike}>Like</button>
             <button onClick={openEditModal}>Edit</button>
-            {showModal ? <EditModal setShowModal={setShowModal} song={song}/> : null}
+            {showModal ? <EditModal setShowModal={setShowModal} song={song} getAllSongs={getAllSongs}/> : null}
         </div>
      );
 }

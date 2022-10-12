@@ -23,9 +23,9 @@ function App() {
         <h1>Music Library</h1>
       </nav>
       <Search searchingSongs={searchingSongs} reSortSongs={reSortSongs}/>  
-      <SongList searchFor={searchFor} sortBy={sortBy}/> 
       <h3>Add New Song</h3>
       <AddSong/>
+      <SongList searchFor={searchFor} sortBy={sortBy}/> 
     </div>
   );
 }
