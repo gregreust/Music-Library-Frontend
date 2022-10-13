@@ -28,10 +28,14 @@ const SongList = () => {
 
     function resetSongs(sortBy, searchFor){
 
-        // if(searchFor){
-        //     let theObj = { foo: searchFor };
-        //     let hasVal = Object.values(theObj).includes(searchFor);
-        // }
+        if(searchFor){
+            
+            let searchResults = songs.filter(song => {
+                //HOW DO I MAKE THIS WORK SO IT WILL PULL UP SONG IF I ONLY SEARCH FOR ONE WORD IN THE TITLE?
+                return Object.values(song).includes(searchFor);
+            }) 
+            setSongs(searchResults);
+        }
 
         if(sortBy === "artist"){
             let newSongList = songs.sort(((a, b) => (a.artist > b.artist) ? 1 : -1));
@@ -65,14 +69,14 @@ const SongList = () => {
         //Need a filter by title, artist, release date, album, etc
         <div className="song-list">
             <div className="search-form">
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={(event) => handleSubmit(event)}>
                     <label>Search
                         {/*value links to useState above, onChange enables a new value to be set*/}
                         <input type="text" autoComplete="on" 
                         value={searchFor} onChange={(event) => setSearchFor(event.target.value)}/>   
                     </label>
                     <label>Sort By
-                        <select name="sort-param" value={sortBy} onChange={(event) => setSortBy(event.target.value)}>
+                        <select name="sort-by" value={sortBy} onChange={(event) => setSortBy(event.target.value)}>
                             <option value=""></option>
                             <option value="artist">Artist</option>
                             <option value="album">Album</option>

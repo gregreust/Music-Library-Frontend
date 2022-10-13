@@ -6,6 +6,7 @@ const SongRow = ({song, getAllSongs}) => {
 
     const handleLike = async () => {
         let newSong = {...song, likes:song.likes+1};
+        //this works, but I don't like that it removes the sortBy and searchFor when liking a song. How to fix????
         await axios.put(`http://127.0.0.1:8000/music/${song.id}/`, newSong).then(()=>{getAllSongs()});
     }
 
