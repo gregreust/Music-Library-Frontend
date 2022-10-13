@@ -23,10 +23,10 @@ const SongRow = ({song, getAllSongs}) => {
             <div>{song.album}</div>
             <div>{song.release_date}</div>
             <div>{song.genre}</div>
-            <div>{song.likes}</div>
+            <div>Likes: {song.likes}</div>
             <button onClick={handleLike}>Like</button>
             <button onClick={openEditModal}>Edit</button>
-            {showModal ? <EditModal setShowModal={setShowModal} song={song} getAllSongs={getAllSongs}/> : null}
+            {showModal ? <EditModal setShowModal={setShowModal} song={song}/> : null}
         </div>
      );
 }

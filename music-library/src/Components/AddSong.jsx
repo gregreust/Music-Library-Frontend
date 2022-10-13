@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 
-const AddSong = ({song, editMode}) => {
+const AddSong = () => {
 
     const [title, setTitle] = useState("");
     const [artist, setArtist] = useState("");
@@ -22,23 +22,19 @@ const AddSong = ({song, editMode}) => {
             likes: 0,
           }; 
 
-        //make a put request if editMode passed from Edit Modal
-        if (editMode){
-            await axios.put(`http://127.0.0.1:8000/music/${song.id}/`, newSongObject).then(window.location.reload());
-        } else {
-            console.log(newSongObject);
-            try {
-                await axios.post('http://127.0.0.1:8000/music/', newSongObject).then(window.location.reload());
+        console.log(newSongObject);
+        try {
+            await axios.post('http://127.0.0.1:8000/music/', newSongObject).then(window.location.reload());
                 
-            } catch (error) {
-                console.log(error)
-            }
+        } catch (error) {
+            console.log(error)
         }
     }
 
+
     return ( 
         <div className="add-song-form">
-            <form onSubmit={e =>{handleSubmit(e)}}>
+            <form onSubmit={event =>{handleSubmit(event)}}>
                 <label>Title
                     <input type="text" autoComplete="on" value={title} onChange={(event) => setTitle(event.target.value)}/>   
                 </label>
