@@ -18,7 +18,7 @@ const SongRow = ({song, getAllSongs}) => {
       };
 
     return ( 
-        <div className="row">
+        <div className="song-row">
             <div>{song.title}</div>
             <div>{song.artist}</div>
             <div>{song.album}</div>

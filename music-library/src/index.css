@@ -6,6 +6,10 @@ body {
 
 }
 
+ul{
+    list-style: none;
+}
+
 nav {
     background-color: rgb(83, 144, 146);;
     width: 100%;
@@ -117,4 +121,30 @@ nav h1 {
 .song-list .search-form .button input:focus {
   box-shadow: 0 0.5em 0.5em -0.4em rgb(109, 130, 131);
   transform: translateY(-0.25em);
+}
+
+.song-row{
+    display:flex;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    margin-right: 3rem;
+    font-size: medium;
+
+}
+
+.song-row div{
+    padding-inline: 10px;
+}
+
+.modal{
+    position:absolute;
+    z-index: 1;
+    background-color: white;
+
+}
+
+.modal .x-button{
+    background-color: rgb(224, 71, 66);
 }

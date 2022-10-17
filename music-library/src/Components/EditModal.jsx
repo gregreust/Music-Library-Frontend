@@ -49,7 +49,7 @@ export const EditModal = ({setShowModal, song}) => {
         <div className="container" ref={modalRef} onClick={closeModal}>
             <div className="modal">
                 <h3>Edit</h3>
-                <button onClick={() => setShowModal(false)}>X</button>
+                <button class="x-button" onClick={() => setShowModal(false)}>X</button>
                 {/* using AddSong, but with edit mode */}
                 <form className="edit-form" onSubmit={(event) => handleSubmit(event)}>
                     <label>Title
