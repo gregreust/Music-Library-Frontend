@@ -10,10 +10,15 @@ function App() {
       <nav>
         <h1>Music Library</h1>
       </nav> 
-      <h3>Add New Song</h3>
-      <AddSong/>
-      <h3>Songs</h3>
-      <SongList/> 
+      <div class="addsong">
+        <h3>Add New Song</h3>
+        <AddSong/>
+      </div>
+      <div class="song-list">
+        <h3>Songs</h3>
+        <SongList/> 
+      </div>
+      
     </div>
   );
 }

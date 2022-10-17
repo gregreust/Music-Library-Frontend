@@ -85,7 +85,9 @@ const SongList = () => {
                             <option value="title">Title</option>
                         </select>
                     </label>
-                    <input type="submit"/>
+                    <div class="button">
+                        <input type="submit"/>
+                    </div> 
                 </form>
             </div>
             <ul>

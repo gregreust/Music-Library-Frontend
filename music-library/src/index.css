@@ -1,0 +1,120 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+nav {
+    background-color: rgb(83, 144, 146);;
+    width: 100%;
+    text-align: center;
+}
+
+nav h1 {
+    margin: 0 auto;
+    padding: 1rem;
+    color: white;
+}
+
+.addsong {
+    margin: 2rem;
+    padding-inline: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+.addsong h3{
+    text-align: center;
+}
+
+.add-song-form{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.add-song-form form{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.labeled-field{
+    padding: 8px;
+}
+
+.labeled-field input{
+    margin-left: 5px;
+}
+
+.add-song-form .button{
+   width: 100%;
+   display: flex;
+   justify-content: flex-end;
+}
+
+.add-song-form .button input{
+    margin-right: 8px; 
+    font-size: larger;
+    font-weight: 600;
+    background-color: rgb(83, 144, 146);
+    color: white;
+    cursor: pointer;
+ }
+
+ .add-song-form .button input:hover,
+ .add-song-form .button input:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em rgb(109, 130, 131);
+  transform: translateY(-0.25em);
+}
+
+.song-list h3{
+    color: white;
+    background-color: rgb(83, 144, 146);
+    padding-inline: 2rem;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.song-list .search-form{
+    padding: 10px;
+}
+
+.search-form form{
+    width: 100%;
+    display: flex;
+}
+
+.song-list .search-form input{
+    margin-inline: 6px;
+}
+
+.song-list .search-form select{
+    margin-inline: 6px;
+}
+
+.song-list .search-form .button input{
+    margin-inline: 6px;
+    background-color: rgb(83, 144, 146);
+    color: white;
+    cursor: pointer;
+}
+
+.song-list .search-form .button input{
+    margin-inline: 6px;
+    background-color: rgb(83, 144, 146);
+    color: white;
+    cursor: pointer;
+}
+
+.song-list .search-form .button input:hover,
+.song-list .search-form .button input:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em rgb(109, 130, 131);
+  transform: translateY(-0.25em);
+}

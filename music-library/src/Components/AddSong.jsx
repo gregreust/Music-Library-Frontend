@@ -33,24 +33,37 @@ const AddSong = () => {
 
 
     return ( 
-        <div className="add-song-form">
+        <div class="add-song-form">
             <form onSubmit={event =>{handleSubmit(event)}}>
-                <label>Title
-                    <input type="text" autoComplete="on" value={title} onChange={(event) => setTitle(event.target.value)}/>   
-                </label>
-                <label>Artist
-                    <input type="text" autoComplete="on" value={artist} onChange={(event) => setArtist(event.target.value)}/>   
-                </label>
-                <label>Album
-                    <input type="text" autoComplete="on" value={album} onChange={(event) => setAlbum(event.target.value)}/>   
-                </label>
-                <label>Date
-                    <input type="text" autoComplete="on" value={date} onChange={(event) => setDate(event.target.value)}/>   
-                </label>
-                <label>Genre
-                    <input type="text" autoComplete="on" value={genre} onChange={(event) => setGenre(event.target.value)}/>   
-                </label>
-                <input type="submit"/>
+                <div class="labeled-field">
+                    <label>Title
+                        <input type="text" autoComplete="on" value={title} onChange={(event) => setTitle(event.target.value)}/>   
+                    </label>
+                </div>
+                <div class="labeled-field">
+                    <label>Artist
+                        <input type="text" autoComplete="on" value={artist} onChange={(event) => setArtist(event.target.value)}/>   
+                    </label>
+                </div>
+                <div class="labeled-field">
+                    <label>Album
+                        <input type="text" autoComplete="on" value={album} onChange={(event) => setAlbum(event.target.value)}/>   
+                    </label>
+                </div>
+                <div class="labeled-field">
+                    <label>Date
+                        <input type="text" autoComplete="on" value={date} onChange={(event) => setDate(event.target.value)}/>   
+                    </label>
+                </div>
+                <div class="labeled-field">
+                    <label>Genre
+                        <input type="text" autoComplete="on" value={genre} onChange={(event) => setGenre(event.target.value)}/>   
+                    </label>
+                </div>
+                <div class="button">
+                    <input type="submit"/>
+                </div>
+                
             </form>
         </div>
      );
